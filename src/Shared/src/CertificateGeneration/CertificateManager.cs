@@ -739,7 +739,7 @@ namespace Microsoft.AspNetCore.Certificates.Generation
             return result;
         }
 
-        // This is just to avoid breaking changes across repos. 
+        // This is just to avoid breaking changes across repos.
         // Will be renamed back to EnsureAspNetCoreHttpsDevelopmentCertificate once updates are made elsewhere.
         public DetailedEnsureCertificateResult EnsureAspNetCoreHttpsDevelopmentCertificate2(
             DateTimeOffset notBefore,

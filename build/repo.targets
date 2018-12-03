@@ -8,16 +8,6 @@
     <Message Importance="high" Text="##vso[build.addbuildtag]release-candidate" Condition=" '$(IsFinalBuild)' == 'true' " />
   </Target>
 
-  <Target Name="PublishToProdCon">
-    <MSBuild Projects="$(MSBuildThisFileDirectory)..\eng\ProdConPublish.csproj"
-             Targets="Restore"
-             Properties="$(BuildProperties);_Dummy=Restore" />
-
-    <MSBuild Projects="$(MSBuildThisFileDirectory)..\eng\ProdConPublish.csproj"
-             Targets="Publish"
-             Properties="$(BuildProperties)" />
-  </Target>
-
   <Target Name="GenerateProjectList" DependsOnTargets="ResolveProjects">
     <MSBuild Projects="@(ProjectToBuild)"
              Targets="GetReferencesProvided"
